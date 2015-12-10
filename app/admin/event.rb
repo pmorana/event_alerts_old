@@ -1,4 +1,5 @@
 ActiveAdmin.register Event do
+  permit_params :title, :info, :event_start, :event_end
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
