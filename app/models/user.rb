@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   has_many :chats
   has_many :alerts
   has_many :postcomments
+  has_many :precomments
 end
