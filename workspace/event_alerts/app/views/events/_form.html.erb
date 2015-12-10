@@ -1,0 +1,34 @@
+<%= form_for @event, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :info, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :info, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :event_start, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :event_start, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :event_end, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :event_end, :class => 'text-field form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  events_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>
