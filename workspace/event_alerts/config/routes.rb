@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'landings/index'
 
-  resources :events
+  resources :events do
+    resources :chats
+  end
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config

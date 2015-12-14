@@ -28,3 +28,12 @@
               :class => 'btn btn-danger' %>
 </div>
 
+<div class="chat-display">
+  <h2>Live Chat (During Event)</h2>
+  <%= render @event.chats %>
+
+  <h3>Chat now:</h3>
+  <!--If statement will control which communication is visible here.  Check against event timestamp-->
+  <%= render 'chats/form' %>
+</div>
+

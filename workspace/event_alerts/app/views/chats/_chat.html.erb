@@ -1,0 +1,7 @@
+<p>
+	<strong>User Says: </strong><%=chat.body%> 
+
+	<%= link_to 'X', [chat.event, chat],
+		method: :delete,
+		data: { confirm: 'Are you sure?'} %>
+</p>
