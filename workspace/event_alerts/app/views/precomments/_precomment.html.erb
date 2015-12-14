@@ -1,0 +1,7 @@
+<p>
+	<strong>User Says: </strong><%=precomment.body%> 
+
+	<%= link_to 'X', [precomment.event, precomment],
+		method: :delete,
+		data: { confirm: 'Are you sure?'} %>
+</p>
