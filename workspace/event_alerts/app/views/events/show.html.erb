@@ -28,31 +28,12 @@
               :class => 'btn btn-danger' %>
 </div>
 
-<!-- If statement will control which communication is visible here.  Check against event timestamp-->
-<div class="precomment-display">
-  <h2>Pre Discussion (Before Event)</h2>
-  <%= render @event.precomments %>
-
-  <h3>Contribute now:</h3>
-  
-  <%= render 'precomments/form' %>
-</div>
-
-<div class="postcomment-display">
-  <h2>Post Discussion (After Event)</h2>
-  <%= render @event.postcomments %>
-
-  <h3>Contribute now:</h3>
-  
-  <%= render 'postcomments/form' %>
-</div>
-
-<div class="chat-display">
-  <h2>Live Chat (During Event)</h2>
-  <%= render @event.chats %>
-
-  <h3>Chat now:</h3>
-  
-  <%= render 'chats/form' %>
-</div>
-
+<!-- If statement will control which communication is visible here.  Check against event timestamp.  App time is currently set to EST in the config/application.rb-->
+<% if DateTime.now < @event.event_start %>
+  <p> precomment</p>
+  <%= render 'layouts/comment' %>
+<% elsif DateTime.now > @event.event_end %>
+  <p>post comment</p>
+<% else %>
+  <p>during chat</p>
+<%end%>
