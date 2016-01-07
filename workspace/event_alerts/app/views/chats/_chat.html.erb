@@ -1,5 +1,5 @@
 <p>
-	<strong>User Says: </strong><%=chat.body%> 
+	<strong><%=chat.user_name%>: </strong><%=chat.body%> 
 
 	<%= link_to 'X', [chat.event, chat],
 		method: :delete,

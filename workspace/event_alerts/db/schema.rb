@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210193637) do
+ActiveRecord::Schema.define(version: 20160107233800) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20151210193637) do
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_name"
   end
 
   add_index "chats", ["event_id"], name: "index_chats_on_event_id"
