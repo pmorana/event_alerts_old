@@ -1,5 +1,6 @@
 class PrecommentsController < ApplicationController
 	
+	
 	def create
 		@event = Event.find(params[:event_id])
 		@precomment = @event.precomments.create(precomment_params)
