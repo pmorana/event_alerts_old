@@ -29,25 +29,29 @@
 </div>
 
 <!-- If statement will control which communication is visible here.  Check against event timestamp.  App time is currently set to EST in the config/application.rb-->
-<% if DateTime.now < @event.event_start %>
-  <div class="precomment-display">
-    <h2>Pre Discussion (Before Event)</h2>
-      <%= render @event.precomments %>
-        <h3>Contribute now:</h3>
-          <%= render 'precomments/form' %>
-  </div>
-<% elsif DateTime.now > @event.event_end %>
-  <div class="postcomment-display">
-    <h2>Post Discussion (After Event)</h2>
-      <%= render @event.postcomments %>
-        <h3>Contribute now:</h3>
-          <%= render 'postcomments/form' %>
-  </div>
-<% else %>
-  <div class="during-display">
-    <h2>Live Discussion</h2>
-      <%= render @event.chats %>
-        <h3>Contribute now:</h3>
-          <%= render 'chats/form' %>
-  </div>
+
+<% if user_signed_in? %>
+
+  <% if DateTime.now < @event.event_start %>
+    <div class="precomment-display">
+      <h2>Pre Discussion (Before Event)</h2>
+        <%= render @event.precomments %>
+          <h3>Contribute now:</h3>
+            <%= render 'precomments/form' %>
+    </div>
+  <% elsif DateTime.now > @event.event_end %>
+    <div class="postcomment-display">
+      <h2>Post Discussion (After Event)</h2>
+        <%= render @event.postcomments %>
+          <h3>Contribute now:</h3>
+            <%= render 'postcomments/form' %>
+    </div>
+  <% else %>
+    <div class="during-display">
+      <h2>Live Discussion</h2>
+        <%= render @event.chats %>
+          <h3>Contribute now:</h3>
+            <%= render 'chats/form' %>
+    </div>
+  <%end%>
 <%end%>

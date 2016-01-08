@@ -1,7 +1,7 @@
 <%= form_for([@event, @event.chats.build]) do |f| %>
 
 	<p>
-		<%= f.hidden_field :user_name, :value => current_user.email %>
+		<%= f.hidden_field :user_name, :value => current_user.email%>
 	</p>
 	<p>
 		<% f.label :body %><br>
