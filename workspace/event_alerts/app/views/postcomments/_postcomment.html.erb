@@ -1,5 +1,5 @@
 <p>
-	<strong>User Says: </strong><%=postcomment.body%> 
+	<strong><%=postcomment.user_name%>: </strong><%=postcomment.body%> 
 
 	<%= link_to 'X', [postcomment.event, postcomment],
 		method: :delete,

@@ -28,9 +28,7 @@
               :class => 'btn btn-danger' %>
 </div>
 
-<!-- If statement will control which communication is visible here.  Check against event timestamp.  App time is currently set to EST in the config/application.rb-->
-
-<% if user_signed_in? %>
+<!-- If statement will control which communication is visible here.  Check against event timestamp.  App time is currently set to CST in the config/application.rb-->
 
   <% if DateTime.now < @event.event_start %>
     <div class="precomment-display">
@@ -54,4 +52,3 @@
             <%= render 'chats/form' %>
     </div>
   <%end%>
-<%end%>

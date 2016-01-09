@@ -1,5 +1,6 @@
 class PrecommentsController < ApplicationController
-	
+	#attempt to restrict to only logged in users. Taken from the prelang generated code, works with Devise
+	before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
 	
 	def create
 		@event = Event.find(params[:event_id])
@@ -16,6 +17,6 @@ class PrecommentsController < ApplicationController
 
 private
 	def precomment_params
-		params.require(:precomment).permit(:user, :body)
+		params.require(:precomment).permit(:user_name, :body)
 	end
 end

@@ -1,5 +1,5 @@
 <p>
-	<strong>User Says: </strong><%=precomment.body%> 
+	<strong><%=precomment.user_name%>: </strong><%=precomment.body%> 
 
 	<%= link_to 'X', [precomment.event, precomment],
 		method: :delete,
